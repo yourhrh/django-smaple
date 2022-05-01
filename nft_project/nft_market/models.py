@@ -20,7 +20,7 @@ class Nft(models.Model):
     # TODO : NFT information
 
     def __str__(self):
-        return name
+        return self.name
 
 
 class Order(models.Model):
@@ -29,4 +29,4 @@ class Order(models.Model):
     price = models.IntegerField()
 
     def __str__(self):
-        return self.user.naem + '-' + self.nft.name
+        return self.user.name + '-' + self.nft.name
