@@ -19,5 +19,7 @@ from nft_market import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('register/', views.register, name='register'),
+    path('nfts', views.register_nft, name='register nft'),
 ]

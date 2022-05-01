@@ -48,58 +48,34 @@
       <div class="row justify-content-center d-flex">
         <div class="col-md-10">
           <!-- form title input -->
-          <div class="form-group">
-            <div class="mb-4">
-              <label for="form-title">제목</label>
-              <input type="text" class="form-control" id="form-title" name="title"placeholder="제목을 입력해주세요.">
-            </div>
-            <!-- contents -->
-            <div class="form-group mb-4">
-              <label for="form-contents">소개</label>
-              <textarea class="form-control" id="form-contents" rows="15"></textarea>
-            </div>
-            <!-- images -->
-            <div class="form-group mb-4">
-              <label for="form-images">이미지</label>
-              <div class="input-group">
-                <input type="text" class="form-control" id="form-images" placeholder="이미지를 업로드해주세요.">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button" id="toggle-images">
-                    <i class="fas fa-plus"></i>
-                  </button>
+          <form action="/nfts" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="mb-4">
+                <label for="form-title">제목</label>
+                <input type="text" class="form-control" id="form-title" name="name" placeholder="제목을 입력해주세요.">
                 </div>
-              </div>
-              <!-- images -->
-              <div class="form-group" id="images-list">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="form-images" placeholder="이미지를 업로드해주세요.">
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="toggle-images">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
+                <div class="mb-4">
+                <label for="form-title">최소 가격</label>
+                <input type="number" class="form-control" name="price" placeholdr="최소 가격">
                 </div>
-              </div>
-              <!-- images -->
-              <div class="form-group" id="images-list">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="form-images" placeholder="이미지를 업로드해주세요.">
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="toggle-images">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
+                <!-- contents -->
+                <div class="form-group mb-4">
+                <label for="form-contents">소개</label>
+                <textarea class="form-control" id="form-contents" name="introduce" rows="15"></textarea>
                 </div>
-              </div>
-              <!-- images -->
+                <!-- images -->
+                <div class="mb-4">
+                <label for="form-title">이미지</label>
+                <input type="text" class="form-control" name="imageUrl" placeholder="이미지 주소를 입력해주세요.">
+                </div>
+                <!-- 등록 취소 버튼 in center -->
+                <div class="form-group d-flex justify-content-between">
+                <button type="button" class="btn btn-secondary" id="post-cancel">취소</button>
+                <button type="submit" class="btn btn-primary" id="post-submit">등록</button>
+                </div>
             </div>
-            <!-- 등록 취소 버튼 in center -->
-            <div class="form-group d-flex justify-content-between">
-              <button type="button" class="btn btn-secondary" id="post-cancel">취소</button>
-              <button type="submit" class="btn btn-primary" id="post-submit">등록</button>
-            </div>
-
-        </div>
+          </form>
       </div>
       
     </div>
