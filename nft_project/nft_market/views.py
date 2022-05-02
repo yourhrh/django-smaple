@@ -14,6 +14,7 @@ def register(request):
 
 def register_nft(request):
     print(request.POST)
+    first_user = User.objects.get()
     Nft.objects.create(name=request.POST['name'], introduce=request.POST['introduce']
-        , owner= }
+        , owner=first_user, image_url=request.POST['image_url'], min_price=request.POST['min_price'])
     return index(request)
