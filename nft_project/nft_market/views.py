@@ -4,7 +4,7 @@ from .models import Nft, User
 # Create your views here.
 
 def index(request):
-    context = { 'nft_list' : nft.objects.all()}
+    context = { 'nft_list' : Nft.objects.all()}
     return render(request, 'index.html', context)
 
 
