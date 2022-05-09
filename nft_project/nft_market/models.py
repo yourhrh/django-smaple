@@ -24,9 +24,15 @@ class Nft(models.Model):
 
 
 class Order(models.Model):
+
+    class OrderStatus(models.TextChoices):
+        WAITING = 'waiting'
+        ACCEPTED = 'accepted'
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     nft = models.ForeignKey(Nft, on_delete=models.CASCADE)
     price = models.IntegerField()
+    status = models.CharField(max_length=10, choices=OrderStatus.choices, default=OrderStatus.WAITING)
 
     def __str__(self):
-        return self.user.name + '-' + self.nft.name
+        return self.user.email + '-' + self.nft.name
